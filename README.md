@@ -22,6 +22,7 @@ For this assignment, the app is a fitness tracker. The fitness tracker allows th
 ```
 
 git@github.com:Cktestakis/Fitness.Tracker.git
+```
 
 2. Install all dependent npm packages
 
@@ -36,7 +37,8 @@ npm install --save
 5. If running on a server or hosting platform add the MONGODB_URI with connection string to the environment variables
 6. If needed seed the MongoDB database by running `npm run seed`
 
-##  Usage
+## Usage
+
 1. Run `npm start` to start the application
 2. Choose **Continue Workout** to continue the last workout or **New Workout** to create a new workout.
 3. At the **Add Your Exercise** page select your **Exercise Type**
@@ -46,15 +48,19 @@ npm install --save
 A demo of the application is available at:
 
 ## Features
-* Add a workout
-* Add a resistance workout
-* Add a cardio workout
-* See a snapshot of the last workout
-* See stats with charts and graphs on the overall workouts
+
+- Add a workout
+- Add a resistance workout
+- Add a cardio workout
+- See a snapshot of the last workout
+- See stats with charts and graphs on the overall workouts
 
 ## License
+
 This project uses the MIT license
+
 ## Contributing
+
 Pull request are welcome
 **Home Page**
 
@@ -65,7 +71,7 @@ Pull request are welcome
 **Stats**
 
 ## Questions
+
 Checkout my Github [profile](https://github.com/Cktestakis)
 
 Please feel free to email at: <codyktestakis@gmail.com>
-```
