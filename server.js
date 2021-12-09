@@ -9,17 +9,29 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+const express = require("express");
+const mongoose = reqeuire("mongoose");
+
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-  useNewURLParser: true,
-  useFindAndModify: false,
+  useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 });
 
-app.use(require("./routes/view.js"));
-app.use(require("./routes/api.js"));
+// routes
+app.use(require("./routes/api"));
+app.use(require("./routes/index"));
 
 app.listen(PORT, () => {
-  console.log(`Currently posted on port ${PORT}!`);
+  console.log(`App running on port ${PORT}!`);
 });
