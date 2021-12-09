@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const Workout = require("../models/workout.js");
 
-//get workout
+// GET workout
 router.get("/api/workouts", (req, res) => {
   Workout.aggregate([
     {
@@ -18,7 +18,7 @@ router.get("/api/workouts", (req, res) => {
     });
 });
 
-// add exercise
+// ADD exercise
 router.put("/api/workouts/:id", ({ body, params }, res) => {
   console.log("check!", body, params);
 
@@ -35,7 +35,7 @@ router.put("/api/workouts/:id", ({ body, params }, res) => {
     });
 });
 
-//create new workout
+// CREATE new workout
 router.post("/api/workouts", ({ body }, res) => {
   console.log("ok");
   Workout.create(body)
@@ -47,7 +47,7 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
-// Get workout in 7 day
+// GET workout in 7 day
 router.get("/api/workouts/range", (req, res) => {
   Workout.aggregate([
     {
@@ -66,5 +66,5 @@ router.get("/api/workouts/range", (req, res) => {
     });
 });
 
-//export API routes
+// Export API routes
 module.exports = router;
