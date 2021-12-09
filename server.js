@@ -1,23 +1,25 @@
 const express = require("express");
+const logger = require("morgan");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
 
-const app = express ();
+const app = express();
 
+app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
-    useNewURLParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
+  useNewURLParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
-app.use(require("./routes/index"));
-app.use(require("./routes/api"));
+app.use(require("./routes/view.js"));
+app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
-    console.log(`Currently osted on port ${PORT}!`);
+  console.log(`Currently posted on port ${PORT}!`);
 });
